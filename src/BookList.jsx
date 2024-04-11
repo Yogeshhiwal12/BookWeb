@@ -5,14 +5,21 @@ const BookList = ({ books }) => {
   const [selectedBook, setSelectedBook] = useState(null);
 
   const limitDescription = (description) => {
-    const maxLength = 100;
+    const maxLength = 50;
     if (!description) return "";
     if (description.length <= maxLength) {
       return description;
     }
     return description.substring(0, maxLength) + "...";
   };
-
+  const limitDescription2 = (description) => {
+    const maxLength = 850;
+    if (!description) return "";
+    if (description.length <= maxLength) {
+      return description;
+    }
+    return description.substring(0, maxLength) + "...";
+  };
   const limitAuthors = (authors) => {
     const maxLength = 50;
     if (!authors) return "";
@@ -83,8 +90,8 @@ const BookList = ({ books }) => {
               <div>
                 <img src={selectedBook.volumeInfo.imageLinks?.thumbnail} alt={selectedBook.volumeInfo.title} />
                 <h1 className="book-title">{selectedBook.volumeInfo.title}</h1>
-                <p className="book-author">By: {limitAuthors(selectedBook.volumeInfo.authors)}</p>
-                <p className="book-description">{selectedBook.volumeInfo.description}</p>
+                <p className="book-author">By: {selectedBook.volumeInfo.authors}</p>
+                <p className="book-description">{limitDescription2(selectedBook.volumeInfo.description)}</p>
                 <p className="book-rating">Rating: {selectedBook.volumeInfo.averageRating}</p>
               </div>
             </div>
