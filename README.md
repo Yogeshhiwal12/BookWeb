@@ -19,8 +19,8 @@ To set up and run this project locally, follow these steps:
    npm start
    This will run the app in development mode. Open http://localhost:3000 to view it in your browser.
 
-Design Choices
-CSS Design (App.css, BookList.css)
+Design Choices:
+1. CSS Design (App.css, BookList.css)
 Box Model Reset: The CSS includes a basic box model reset (box-sizing, margin, padding) for consistent styling.
 Container: The main content is placed within a centered container (max-width: 1200px) for better readability.
 Typography: Uses Arial, sans-serif as the primary font for better cross-browser compatibility.
